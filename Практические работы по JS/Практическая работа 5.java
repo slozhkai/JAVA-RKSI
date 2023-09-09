@@ -259,3 +259,73 @@ import java.util.Scanner;
     }
 }*/
 
+/*import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Введите число (1 <= x <= 100): ");
+        int number = s.nextInt();
+        
+        if(number < 1 || number > 100) {
+            System.out.println("Число должно быть в диапазоне от 1 до 100.");
+            return;
+        }
+        
+        String romanNumeral = convertToRoman(number);
+        System.out.println(number + " в римской системе счисления: " + romanNumeral);
+    }
+    
+    public static String convertToRoman(int number) {
+        String romanNumeral = "";
+        
+        if(number >= 100) {
+            romanNumeral += "C";
+            number -= 100;
+        } 
+        
+        if(number >= 90) {
+            romanNumeral += "XC";
+            number -= 90;
+        } 
+        
+        if(number >= 50) {
+            romanNumeral += "L";
+            number -= 50;
+        } 
+        
+        if(number >= 40) {
+            romanNumeral += "XL";
+            number -= 40;
+        } 
+        
+        if(number >= 10) {
+            int count = number / 10;
+            romanNumeral += "X".repeat(count);
+            number -= count * 10;
+        } 
+        
+        if(number >= 9) {
+            romanNumeral += "IX";
+            number -= 9;
+        } 
+        
+        if(number >= 5) {
+            romanNumeral += "V";
+            number -= 5;
+        } 
+        
+        if(number >= 4) {
+            romanNumeral += "IV";
+            number -= 4;
+        } 
+        
+        if(number >= 1) {
+            int count = number;
+            romanNumeral += "I".repeat(count);
+        }
+        
+        return romanNumeral;
+    }
+}*/
+
