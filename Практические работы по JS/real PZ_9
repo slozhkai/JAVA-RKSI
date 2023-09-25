@@ -1,0 +1,76 @@
+//2 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        int n = Integer.parseInt(s.nextLine());
+        
+        Map<String, List<String>> professionsMap = new HashMap<>(); 
+        
+        for (int i = 0; i < n; i++) {
+            String name = s.nextLine();
+            String profession = s.nextLine();
+            
+            if (professionsMap.containsKey(profession)) {
+                professionsMap.get(profession).add(name);
+            } else {
+                List<String> employees = new ArrayList<>();
+                employees.add(name);
+                professionsMap.put(profession, employees);
+            }
+        }
+        
+        s.close();
+
+        String most = "";
+        int maxEmployees = 0;
+        
+        for (Map.Entry<String, List<String>> entry : professionsMap.entrySet()) {
+            if (entry.getValue().size() > maxEmployees) {
+                most = entry.getKey();
+                maxEmployees = entry.getValue().size();
+            }
+        }
+        
+        System.out.println("Сотрудников профессии \"" + most + "\" больше всего: " + maxEmployees);
+        System.out.println("Имена сотрудников этой профессии:");
+        
+        List<String> m = professionsMap.get(most);
+        for (String employee : m) {
+            System.out.println(employee);
+        }
+    }
+}
+
+//4
+/*import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int numLines = Integer.parseInt(scanner.nextLine());
+        Set<String> uniqueWords = new HashSet<>();
+
+        for (int i = 0; i < numLines; i++) {
+            String line = scanner.nextLine();
+            String[] words = line.split("\\s+"); // Разделение строки на слова по пробелам
+
+            for (String word : words) {
+                word = word.replaceAll("[^a-zA-Zа-яА-ЯёЁ]", "").toLowerCase();
+
+                if (!word.isEmpty()) {
+                    uniqueWords.add(word);
+                }
+            }
+        }
+
+        scanner.close();
+
+        System.out.println("Количество различных слов: " + uniqueWords.size());
+    }
+}*/
