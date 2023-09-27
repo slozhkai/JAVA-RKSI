@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+
+/*public class Main{  
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите первую строну a: ");
+        double a = sc.nextDouble();
+        System.out.print("Введите первую строну b: ");
+        double b = sc.nextDouble();
+        System.out.print("Введите первую строну c: ");
+        double c = sc.nextDouble();
+        geroin(a, b, c);
+    }
+    
+    public static void geroin(double x, double y, double z) {
+        double p = ((x+y+z)/2);
+        double s = Math.sqrt(p*(p-x)*(p-y)*(p-z));
+        System.out.print(s);
+    }
+}*/
+
+/*public class Main{  
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Выберите вашу фигуру(круг-1, квадрат-2): ");
+        int v = sc.nextInt();
+        
+        if(v == 2){
+            System.out.println("Введите сторону вашего квадрата: ");
+            double a = sc.nextDouble();
+            square(a);
+            
+        }
+        
+        else if(v == 1){
+            System.out.println("Введите радиус вашего круга: ");
+            double b = sc.nextDouble();
+            circle(b);
+        }
+        
+        else{
+            System.out.println("Вы ввели не то число...");
+        }
+    }
+    
+    public static void square(double x) {
+        
+        double p = (x * 4);
+        double perdun = Math.ceil(p);
+        System.out.println("Периметр вашего квадрата: " + perdun);
+        
+        double s = (Math.pow(x, 2));
+        double csgo = Math.ceil(s);
+        System.out.println("Площадь вашего квадрата: " + csgo);
+        
+    }
+    
+    public static void circle(double r) {
+        
+        double c = (2 * 3.14 * r);
+        double dota = Math.ceil(c);
+        System.out.println("Периметр вашего круга: " + dota);
+        
+        double per = (3.14 * Math.pow(r, 2));
+        double suka = Math.ceil(per);
+        System.out.println("Площадь вашего круга: " + suka);
+    }
+}*/
+
+public class Main{  
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Введите ваше число(обязательно целое): ");
+        int a = sc.nextInt();
+        
+        simple();
+    }
+    
+    public static void simple(int x){
+        if(()
+    }
+}
