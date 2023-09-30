@@ -68,17 +68,32 @@ import java.util.Scanner;
     }
 }*/
 
-public class Main{  
+/*public class Main{  
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Введите ваше число(обязательно целое): ");
-        int a = sc.nextInt();
+        int x = sc.nextInt();
         
-        simple();
+        if (simple(x)) {
+            System.out.println(x + " - простое число.");
+        } else {
+            System.out.println(x + " - не является простым числом.");
+        }
     }
     
-    public static void simple(int x){
-        if(()
+    public static boolean simple(int x){
+        if (x <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= x; i++) {
+            if (x % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
-}
+}*/
+
+
+
