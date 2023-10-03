@@ -1,7 +1,6 @@
+1.
 import java.util.Scanner;
-
-
-/*public class Main{  
+public class Main{  
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите первую строну a: ");
@@ -18,9 +17,10 @@ import java.util.Scanner;
         double s = Math.sqrt(p*(p-x)*(p-y)*(p-z));
         System.out.print(s);
     }
-}*/
+}
 
-/*public class Main{  
+2.
+public class Main{  
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите вашу фигуру(круг-1, квадрат-2): ");
@@ -66,34 +66,120 @@ import java.util.Scanner;
         double suka = Math.ceil(per);
         System.out.println("Площадь вашего круга: " + suka);
     }
-}*/
+}
+3.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
 
-/*public class Main{  
-    public static void main(String[] args){
+        ArrayList<String> stack = new ArrayList<>();
+
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println("Введите ваше число(обязательно целое): ");
-        int x = sc.nextInt();
-        
-        if (simple(x)) {
-            System.out.println(x + " - простое число.");
-        } else {
-            System.out.println(x + " - не является простым числом.");
-        }
-    }
-    
-    public static boolean simple(int x){
-        if (x <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= x; i++) {
-            if (x % i == 0) {
-                return false;
+
+        System.out.print("Введите количество запросов: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+
+
+        for (int i = 0; i < n; i++) {
+            String query = sc.nextLine();
+            
+
+            String[] words = query.split(" ");
+            
+            if (words[0].equals("push")) {
+
+                String clothing = words[1];
+                stack.add(clothing);
+            } else if (words[0].equals("pop")) {
+
+                if (!stack.isEmpty()) {
+                    String clothing = stack.remove(stack.size() - 1);
+                    System.out.println("Петя взял " + clothing);
+                }
             }
         }
-        return true;
+
+        System.out.println("Оставшиеся вещи на стуле:");
+        for (String clothing : stack) {
+            System.out.println(clothing);
+        }
     }
-}*/
+}
 
+4.
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Введите строку: ");
+        String inputString = sc.nextLine();
+        String sortedString = sortByLength(inputString);
+        System.out.println(sortedString);
+    }
 
+    public static String sortByLength(String inputString) {
+        String[] words = inputString.split(" ");
+        Arrays.sort(words, (a, b) -> {
+            int lengthComparison = Integer.compare(a.length(), b.length());
+            if (lengthComparison == 0) {
+                return a.compareTo(b);
+            } else {
+                return lengthComparison;
+            }
+        });
+        
+        return String.join(" ", words);
+    }
+}
+5.
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Введите количество строк в массиве: ");
+        int n = sc.nextInt();
+        
+        int[][] arr = new int[n][];
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Введите количество элементов в строке " + (i + 1) + ": ");
+            int m = sc.nextInt();
+            arr[i] = new int[m];
+
+            System.out.print("Введите элементы строки через пробел: ");
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int result = maximin(arr);
+        System.out.println("Максимальное значение среди минимальных элементов строк: " + result);
+
+        sc.close();
+    }
+
+    public static int maximin(int[][] matrix) {
+        int maxMin = Integer.MIN_VALUE;
+
+        for (int[] row : matrix) {
+            int minInRow = Integer.MAX_VALUE;
+
+            for (int num : row) {
+                if (num < minInRow) {
+                    minInRow = num;
+                }
+            }
+
+            if (minInRow > maxMin) {
+                maxMin = minInRow;
+            }
+        }
+
+        return maxMin;
+    }
+}
